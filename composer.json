@@ -7,10 +7,14 @@
         {
             "name": "Tinywan",
             "email": "756684177@qq.com"
+        },
+        {
+            "name": "Ronny Lopez",
+            "email": "ronny@tangotree.io"
         }
     ],
     "require": {
-        "php": "~7.0",
+        "php": ">=5.6.0",
         "ext-redis": "~2.2.5"
     },
 
