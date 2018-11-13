@@ -1,9 +1,7 @@
 ## redlock-php
 redlock-php - Redis distributed locks in PHP
 
-Based on [Redlock-rb](https://github.com/antirez/redlock-rb) by [Salvatore Sanfilippo](https://github.com/antirez)
-
-This library implements the Redis-based distributed lock manager algorithm [described in this blog post](http://antirez.com/news/77).
+Based on [Redlock-rb](https://github.com/antirez/redlock-rb) by [Salvatore Sanfilippo](https://github.com/antirez),This library implements the Redis-based distributed lock manager algorithm [described in this blog post](http://antirez.com/news/77).
 
 #### composer install
 
@@ -21,7 +19,7 @@ $servers = [
 $redLock = new RedLock($servers);
 ```
 
-###### To acquire a lock:
+#### To acquire a lock:
 
 ```php
 $lock = $redLock->lock('my_resource_name', 1000);
@@ -46,7 +44,7 @@ Array
 * resource, the name of the locked resource as specified by the user.
 * token, a random token value which is used to safe reclaim the lock.
 
-###### To release a lock:
+#### To release a lock:
 
 ```php
  $redLock->unlock($lock)
