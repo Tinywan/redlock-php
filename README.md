@@ -5,6 +5,11 @@ Based on [Redlock-rb](https://github.com/antirez/redlock-rb) by [Salvatore Sanfi
 
 This library implements the Redis-based distributed lock manager algorithm [described in this blog post](http://antirez.com/news/77).
 
+#### composer install
+
+```composer log
+composer require tinywan/redlock-php
+```
 #### To create a lock manager:
 
 ```php
