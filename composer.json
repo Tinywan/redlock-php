@@ -1,6 +1,6 @@
 {
-    "name": "Tinywan/redlock-php",
-    "description": "Redis distributed locks in PHP",
+    "name": "tinywan/redlock-php",
+    "description": "Redis distributed locks in PHP for build composer packagist",
     "type": "library",
     "license": "MIT",
     "authors": [
