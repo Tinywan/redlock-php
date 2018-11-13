@@ -1,29 +1,25 @@
+## redlock-php
 redlock-php - Redis distributed locks in PHP
 
 Based on [Redlock-rb](https://github.com/antirez/redlock-rb) by [Salvatore Sanfilippo](https://github.com/antirez)
 
 This library implements the Redis-based distributed lock manager algorithm [described in this blog post](http://antirez.com/news/77).
 
-To create a lock manager:
+#### To create a lock manager:
 
 ```php
-
 $servers = [
     ['127.0.0.1', 6379, 0.01],
     ['127.0.0.1', 6389, 0.01],
     ['127.0.0.1', 6399, 0.01],
 ];
-
 $redLock = new RedLock($servers);
-
 ```
 
-To acquire a lock:
+###### To acquire a lock:
 
 ```php
-
 $lock = $redLock->lock('my_resource_name', 1000);
-
 ```
 
 Where the resource name is an unique identifier of what you are trying to lock
@@ -45,18 +41,18 @@ Array
 * resource, the name of the locked resource as specified by the user.
 * token, a random token value which is used to safe reclaim the lock.
 
-To release a lock:
+###### To release a lock:
 
 ```php
-    $redLock->unlock($lock)
+ $redLock->unlock($lock)
 ```
-
 It is possible to setup the number of retries (by default 3) and the retry
 delay (by default 200 milliseconds) used to acquire the lock.
 
 The retry delay is actually chosen at random between `$retryDelay / 2` milliseconds and
 the specified `$retryDelay` value.
 
-**Disclaimer**: As stated in the original antirez's version, this code implements an algorithm
+#### Disclaimer: 
+As stated in the original antirez's version, this code implements an algorithm
 which is currently a proposal, it was not formally analyzed. Make sure to understand how it works
 before using it in your production environments.
